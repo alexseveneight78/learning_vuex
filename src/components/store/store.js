@@ -6,7 +6,13 @@ export const store = new Vuex.Store({
     state: {
         counter: 0
     },
-    mutations: {
-
+    getters: {
+        doubleCounter: state => {
+            return state.counter * 2;
+        },
+        stringCounter: state => {
+            return state.counter + ' Clicks';
+        }
     }
 });
+
