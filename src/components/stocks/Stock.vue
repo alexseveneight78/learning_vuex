@@ -2,8 +2,9 @@
     <div>
         <div class="boxes">
             <div class="panel">
+                {{ stockProps.id }}
                 <div class="heading">
-                    NAME<span>PRICE</span>
+                    {{ stockProps.name }}<span> ({{ stockProps.price }})</span>
                 </div>
                 <div class="content">
                     <input 
@@ -12,7 +13,10 @@
                         v-model="quantity"
                         >
                 </div>
-                <button></button>
+                <button
+                    @click="buyStockItems"
+                    :disabled="quantity <=0"
+                >Buy</button>
             </div>
         </div>
     </div>
@@ -20,17 +24,23 @@
 
 <script>
 export default {
+    props: ['stockProps'],
     data(){
         return {
             quantity: 0
         }
     },
     methods: {
-
+        buyStockItems(){
+            
+        }
     }
 }
 </script>
 
 <style scoped>
-
+    span {
+        color: green;
+        font-weight: bold;
+    }
 </style>
