@@ -19,6 +19,11 @@
                     { id: 4, name: 'Twitter', price: 8 }
                 ]
             }
+        },
+        computed: {
+            stocks(){
+                return this.$store.getters.stocks;
+            }
         }
     }
 </script>
