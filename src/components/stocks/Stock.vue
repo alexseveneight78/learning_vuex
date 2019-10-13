@@ -14,10 +14,12 @@
                         >
                 </div>
                 <button
-                    @click="buyStockItems"
                     :disabled="quantity <=0"
                 >Buy</button>
             </div>
+            <div class="num">Num is: {{ num }}</div>
+            <button @click="increase">Increment</button>
+            <hr>
         </div>
     </div>
 </template>
@@ -31,8 +33,13 @@ export default {
         }
     },
     methods: {
-        buyStockItems(){
-            
+        increase(){
+
+        }
+    },
+    computed: {
+        num(){
+            return this.$stock.getters.num;
         }
     }
 }
