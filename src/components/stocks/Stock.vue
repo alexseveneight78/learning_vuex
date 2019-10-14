@@ -19,7 +19,6 @@
             </div>
             <div class="num">Num is: {{ num }}</div>
             <button @click="increase">Increment</button>
-            <hr>
         </div>
     </div>
 </template>
@@ -34,12 +33,12 @@ export default {
     },
     methods: {
         increase(){
-
+            this.$store.commit('plus');
         }
     },
     computed: {
         num(){
-            return this.$stock.getters.num;
+            return this.$store.getters.num;
         }
     }
 }

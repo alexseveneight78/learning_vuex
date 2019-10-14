@@ -12,13 +12,18 @@ const store = new Vuex.Store({
     num: state => {
       return state.num;
     }
+  },
+  mutations: {
+    plus(state){
+      state.num++;
+    }
   }
 })
 
 new Vue({
   el: '#app',
   render: h => h(App),
-  store
+  store: store
 });
 
 console.log(store.getters.num)
